@@ -21,6 +21,9 @@
 		BF1BD93525ECA61F009901BB /* Stacks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1BD92025ECA61F009901BB /* Stacks.framework */; };
 		BF1BD93625ECA61F009901BB /* Stacks.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF1BD92025ECA61F009901BB /* Stacks.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF1BD94325ECA6BD009901BB /* StackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD94225ECA6BD009901BB /* StackManager.swift */; };
+		BF1BD97325ECF240009901BB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD97225ECF240009901BB /* Theme.swift */; };
+		BF1BD97D25ECF32A009901BB /* AmountSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD97C25ECF32A009901BB /* AmountSelectionView.swift */; };
+		BF1BD98425ECF44E009901BB /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD98325ECF44E009901BB /* BaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,9 @@
 		BF1BD92F25ECA61F009901BB /* StacksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StacksTests.swift; sourceTree = "<group>"; };
 		BF1BD93125ECA61F009901BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF1BD94225ECA6BD009901BB /* StackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackManager.swift; sourceTree = "<group>"; };
+		BF1BD97225ECF240009901BB /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		BF1BD97C25ECF32A009901BB /* AmountSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountSelectionView.swift; sourceTree = "<group>"; };
+		BF1BD98325ECF44E009901BB /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +175,11 @@
 			children = (
 				BF1BD8E825ECA5FD009901BB /* AppDelegate.swift */,
 				BF1BD8EA25ECA5FD009901BB /* SceneDelegate.swift */,
-				BF1BD8EC25ECA5FD009901BB /* ViewController.swift */,
+				BF1BD98225ECF441009901BB /* Common */,
+				BF1BD96E25ECF13B009901BB /* Extensions */,
+				BF1BD96C25ECF110009901BB /* Model */,
+				BF1BD96D25ECF117009901BB /* View */,
+				BF1BD96725ECF0FE009901BB /* Controller */,
 				BF1BD8EE25ECA5FD009901BB /* Main.storyboard */,
 				BF1BD8F125ECA5FE009901BB /* Assets.xcassets */,
 				BF1BD8F325ECA5FE009901BB /* LaunchScreen.storyboard */,
@@ -213,6 +223,45 @@
 				BF1BD93125ECA61F009901BB /* Info.plist */,
 			);
 			path = StacksTests;
+			sourceTree = "<group>";
+		};
+		BF1BD96725ECF0FE009901BB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BF1BD8EC25ECA5FD009901BB /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF1BD96C25ECF110009901BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF1BD96D25ECF117009901BB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF1BD97C25ECF32A009901BB /* AmountSelectionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF1BD96E25ECF13B009901BB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BF1BD97225ECF240009901BB /* Theme.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BF1BD98225ECF441009901BB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BF1BD98325ECF44E009901BB /* BaseView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,7 +468,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF1BD97D25ECF32A009901BB /* AmountSelectionView.swift in Sources */,
 				BF1BD8ED25ECA5FD009901BB /* ViewController.swift in Sources */,
+				BF1BD97325ECF240009901BB /* Theme.swift in Sources */,
+				BF1BD98425ECF44E009901BB /* BaseView.swift in Sources */,
 				BF1BD8E925ECA5FD009901BB /* AppDelegate.swift in Sources */,
 				BF1BD8EB25ECA5FD009901BB /* SceneDelegate.swift in Sources */,
 			);
