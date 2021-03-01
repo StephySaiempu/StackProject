@@ -19,7 +19,7 @@ class ViewController: UIViewController {
 
 
     func setUpViews(){
-        let amountView = EMISelectionView.init(with:UIColor.ProjectTheme.AppBackgroundColor , circular: false, shadow: false, borderColor: nil, borderThickness: nil)
+        let amountView = PaymentView.init(with:UIColor.ProjectTheme.AppBackgroundColor , circular: false, shadow: false, borderColor: nil, borderThickness: nil)
         view.addSubview(amountView)
         amountView.translatesAutoresizingMaskIntoConstraints = false
         amountView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true

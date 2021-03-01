@@ -20,7 +20,7 @@ class EMISelectionView: BaseView{
     var durationValuelabel: UILabel!
     var layout: UICollectionViewFlowLayout!
     var collectionView: UICollectionView!
-    var createPlanView: UIView!
+    var createPlanView: BaseView!
     var createPlanLabel: UILabel!
     var modelArray = [EMIModel]()
     
