@@ -24,6 +24,9 @@
 		BF1BD97325ECF240009901BB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD97225ECF240009901BB /* Theme.swift */; };
 		BF1BD97D25ECF32A009901BB /* AmountSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD97C25ECF32A009901BB /* AmountSelectionView.swift */; };
 		BF1BD98425ECF44E009901BB /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD98325ECF44E009901BB /* BaseView.swift */; };
+		BF1BD98A25ECFC9E009901BB /* EMISelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD98925ECFC9E009901BB /* EMISelectionView.swift */; };
+		BF1BD99025ED0196009901BB /* EMICell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD98F25ED0196009901BB /* EMICell.swift */; };
+		BF1BD99625ED111B009901BB /* EMIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD99525ED111B009901BB /* EMIModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +106,9 @@
 		BF1BD97225ECF240009901BB /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		BF1BD97C25ECF32A009901BB /* AmountSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountSelectionView.swift; sourceTree = "<group>"; };
 		BF1BD98325ECF44E009901BB /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		BF1BD98925ECFC9E009901BB /* EMISelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMISelectionView.swift; sourceTree = "<group>"; };
+		BF1BD98F25ED0196009901BB /* EMICell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMICell.swift; sourceTree = "<group>"; };
+		BF1BD99525ED111B009901BB /* EMIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMIModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +242,7 @@
 		BF1BD96C25ECF110009901BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF1BD99525ED111B009901BB /* EMIModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,6 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				BF1BD97C25ECF32A009901BB /* AmountSelectionView.swift */,
+				BF1BD98925ECFC9E009901BB /* EMISelectionView.swift */,
+				BF1BD98F25ED0196009901BB /* EMICell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -468,8 +477,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF1BD98A25ECFC9E009901BB /* EMISelectionView.swift in Sources */,
+				BF1BD99625ED111B009901BB /* EMIModel.swift in Sources */,
 				BF1BD97D25ECF32A009901BB /* AmountSelectionView.swift in Sources */,
 				BF1BD8ED25ECA5FD009901BB /* ViewController.swift in Sources */,
+				BF1BD99025ED0196009901BB /* EMICell.swift in Sources */,
 				BF1BD97325ECF240009901BB /* Theme.swift in Sources */,
 				BF1BD98425ECF44E009901BB /* BaseView.swift in Sources */,
 				BF1BD8E925ECA5FD009901BB /* AppDelegate.swift in Sources */,
