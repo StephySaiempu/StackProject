@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Stacks
 
 
 class EMISelectionView: BaseView{
@@ -23,11 +24,50 @@ class EMISelectionView: BaseView{
     var createPlanView: BaseView!
     var createPlanLabel: UILabel!
     var modelArray = [EMIModel]()
+    weak var navigationDelegate: NavigationProtocolForStack?
+    
+    public var currentState: StateOfView!{
+        didSet{
+            titleView.alpha = 0
+            titleLabel.alpha = 0
+            questionLabel.alpha = 0
+            descriptionLabel.alpha = 0
+            emiLabel.alpha = 0
+            emiValueLabel.alpha = 0
+            durationText.alpha = 0
+            durationValuelabel.alpha = 0
+            
+            switch currentState {
+            case .dismiss:
+                titleView.alpha = 1
+                titleLabel.alpha = 1
+                break
+            case .visible:
+                questionLabel.alpha = 1
+                descriptionLabel.alpha = 1
+                break
+            case .background:
+                emiLabel.alpha = 1
+                emiValueLabel.alpha = 1
+                durationText.alpha = 1
+                durationValuelabel.alpha = 1
+                break
+            default:
+                break
+            }
+        }
+    }
+    var selectedModel: EMIModel?{
+        didSet{
+            self.emiValueLabel.text = selectedModel?.amountToBePaid
+            self.durationValuelabel.text = selectedModel?.duration
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        titleView = BaseView.init(with: UIColor.ProjectTheme.ButtonColor, circular: true, shadow: false, borderColor: nil, borderThickness: nil)
+        titleView = BaseView.init(with: UIColor.ProjectTheme.ButtonColor, circular: false, shadow: false, borderColor: nil, borderThickness: nil)
         self.addSubview(titleView)
         
         titleLabel = UILabel()
@@ -111,6 +151,7 @@ class EMISelectionView: BaseView{
         modelArray.append(EMIModel.init(amountToBePaid: "₹4,247/mo", duration: "for 12 months", selected: true, backgroundColor: UIColor.ProjectTheme.cellOneColor))
         modelArray.append(EMIModel.init(amountToBePaid: "₹5,580/mo", duration: "for 9 months", selected: false, backgroundColor: UIColor.ProjectTheme.cellTwoColor))
         modelArray.append(EMIModel.init(amountToBePaid: "₹8,250/mo", duration: "for 8 months", selected: false, backgroundColor: UIColor.ProjectTheme.cellThreeColor))
+        selectedModel = modelArray[0]
     }
     
     required init?(coder: NSCoder) {
@@ -123,11 +164,11 @@ class EMISelectionView: BaseView{
         titleView.translatesAutoresizingMaskIntoConstraints = false
         [titleView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
          titleView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0),
-         titleView.topAnchor.constraint(equalTo: self.topAnchor, constant: 14),
-         titleView.heightAnchor.constraint(equalToConstant: 80)].forEach({$0.isActive = true})
+         titleView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+         titleView.heightAnchor.constraint(equalToConstant: 145)].forEach({$0.isActive = true})
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        [titleLabel.centerYAnchor.constraint(equalTo: titleView.centerYAnchor, constant: 0),
+        [titleLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 30),
          titleLabel.centerXAnchor.constraint(equalTo: titleView.centerXAnchor, constant: 0)].forEach({$0.isActive = true})
         
         questionLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -186,5 +227,24 @@ extension EMISelectionView: UICollectionViewDelegate,UICollectionViewDataSource{
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedModel = modelArray[indexPath.row]
+    }
+}
+
+
+extension EMISelectionView: StackDataSource{
+    var state: StateOfView {
+        get {
+            return currentState
+        }
+        set {
+            self.currentState = newValue
+        }
+    }
+    func heightOfHeaderView() -> CGFloat {
+        return 96
+    }
+     
     
 }

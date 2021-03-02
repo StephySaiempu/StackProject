@@ -7,6 +7,7 @@
 
 
 import UIKit
+import Stacks
 
 class PaymentView: BaseView{
     
@@ -22,18 +23,45 @@ class PaymentView: BaseView{
     var createPlanView: BaseView!
     var createPlanLabel: UILabel!
     var selectImage: UIImageView!
+    weak var navigationDelegate: NavigationProtocolForStack?
+    
+    public var currentState: StateOfView!{
+        didSet{
+            titleView.alpha = 0
+            titleLabel.alpha = 0
+            questionLabel.alpha = 0
+            descriptionLabel.alpha = 0
+            switch currentState {
+            case .dismiss:
+                titleView.alpha = 1
+                titleLabel.alpha = 1
+                break
+            case .visible:
+                titleView.alpha = 0
+                titleLabel.alpha = 0
+                questionLabel.alpha = 1
+                descriptionLabel.alpha = 1
+                break
+            default:
+                break
+            }
+            
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        titleView = BaseView.init(with: UIColor.ProjectTheme.ButtonColor, circular: true, shadow: false, borderColor: nil, borderThickness: nil)
+        titleView = BaseView.init(with: UIColor.ProjectTheme.ButtonColor, circular: false, shadow: false, borderColor: nil, borderThickness: nil)
         self.addSubview(titleView)
+        titleView.alpha = 1
         
         titleLabel = UILabel()
         self.addSubview(titleLabel)
         titleLabel.text = "Select your bank account"
         titleLabel.textColor = .white
         titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        titleLabel.alpha = 1
         
         questionLabel = UILabel()
         self.addSubview(questionLabel)
@@ -97,11 +125,11 @@ class PaymentView: BaseView{
         titleView.translatesAutoresizingMaskIntoConstraints = false
         [titleView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
          titleView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0),
-         titleView.topAnchor.constraint(equalTo: self.topAnchor, constant: 14),
-         titleView.heightAnchor.constraint(equalToConstant: 80)].forEach({$0.isActive = true})
+         titleView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+         titleView.heightAnchor.constraint(equalToConstant: 145)].forEach({$0.isActive = true})
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        [titleLabel.centerYAnchor.constraint(equalTo: titleView.centerYAnchor, constant: 0),
+        [titleLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 30),
          titleLabel.centerXAnchor.constraint(equalTo: titleView.centerXAnchor, constant: 0)].forEach({$0.isActive = true})
         
         questionLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -150,4 +178,22 @@ class PaymentView: BaseView{
          createPlanLabel.topAnchor.constraint(equalTo: createPlanView.topAnchor, constant: 10),
          createPlanLabel.bottomAnchor.constraint(equalTo: createPlanView.bottomAnchor, constant: -10)].forEach({$0.isActive = true})
     }
+}
+
+
+extension PaymentView: StackDataSource{
+    var state: StateOfView {
+        get {
+            return currentState
+        }
+        set {
+            self.currentState = newValue
+        }
+    }
+    
+    func heightOfHeaderView() -> CGFloat {
+        return 48
+    }
+    
+    
 }

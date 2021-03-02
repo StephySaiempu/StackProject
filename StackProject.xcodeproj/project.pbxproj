@@ -29,6 +29,10 @@
 		BF1BD99625ED111B009901BB /* EMIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD99525ED111B009901BB /* EMIModel.swift */; };
 		BF1BD99C25ED20FB009901BB /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD99B25ED20FB009901BB /* PaymentView.swift */; };
 		BF1BD9A225ED23F9009901BB /* BaseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD9A125ED23F9009901BB /* BaseImageView.swift */; };
+		BF1BD9A825ED52E3009901BB /* StackDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD9A725ED52E3009901BB /* StackDataSource.swift */; };
+		BF1BD9AE25ED5379009901BB /* StateOfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD9AD25ED5379009901BB /* StateOfView.swift */; };
+		BF1BD9B425ED53E2009901BB /* NavigationProtocolForStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD9B325ED53E2009901BB /* NavigationProtocolForStack.swift */; };
+		BF1BD9C225ED5ECB009901BB /* StackError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD9C125ED5ECB009901BB /* StackError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +117,10 @@
 		BF1BD99525ED111B009901BB /* EMIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMIModel.swift; sourceTree = "<group>"; };
 		BF1BD99B25ED20FB009901BB /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		BF1BD9A125ED23F9009901BB /* BaseImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseImageView.swift; sourceTree = "<group>"; };
+		BF1BD9A725ED52E3009901BB /* StackDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackDataSource.swift; sourceTree = "<group>"; };
+		BF1BD9AD25ED5379009901BB /* StateOfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateOfView.swift; sourceTree = "<group>"; };
+		BF1BD9B325ED53E2009901BB /* NavigationProtocolForStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationProtocolForStack.swift; sourceTree = "<group>"; };
+		BF1BD9C125ED5ECB009901BB /* StackError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +229,10 @@
 			children = (
 				BF1BD92225ECA61F009901BB /* Stacks.h */,
 				BF1BD94225ECA6BD009901BB /* StackManager.swift */,
+				BF1BD9A725ED52E3009901BB /* StackDataSource.swift */,
+				BF1BD9AD25ED5379009901BB /* StateOfView.swift */,
+				BF1BD9B325ED53E2009901BB /* NavigationProtocolForStack.swift */,
+				BF1BD9C125ED5ECB009901BB /* StackError.swift */,
 				BF1BD92325ECA61F009901BB /* Info.plist */,
 			);
 			path = Stacks;
@@ -517,7 +529,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF1BD9B425ED53E2009901BB /* NavigationProtocolForStack.swift in Sources */,
 				BF1BD94325ECA6BD009901BB /* StackManager.swift in Sources */,
+				BF1BD9AE25ED5379009901BB /* StateOfView.swift in Sources */,
+				BF1BD9A825ED52E3009901BB /* StackDataSource.swift in Sources */,
+				BF1BD9C225ED5ECB009901BB /* StackError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

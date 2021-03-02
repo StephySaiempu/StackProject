@@ -8,7 +8,7 @@
 import UIKit
 import Stacks
 
-class AmountSelectionView: UIView{
+class AmountSelectionView: BaseView{
     
     var titleLabel: UILabel!
     var descriptionLabel: UILabel!
@@ -16,6 +16,30 @@ class AmountSelectionView: UIView{
     var creditAmountLabel: UILabel!
     var amountSelectionView: BaseView!
     var amountSelectionDescription: UILabel!
+    weak var navigationDelegate: NavigationProtocolForStack?
+    
+    public var currentState: StateOfView!{
+        didSet{
+            self.titleLabel.alpha = 0
+            self.descriptionLabel.alpha = 0
+            creditAmountLabel.alpha = 0
+            creditTextLabel.alpha = 0
+            switch currentState {
+            case .dismiss:
+                break
+            case .visible:
+                self.titleLabel.alpha = 1
+                self.descriptionLabel.alpha = 1
+                break
+            case .background:
+                creditTextLabel.alpha = 1
+                creditAmountLabel.alpha = 1
+                break
+            default:
+                break
+            }
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -95,4 +119,22 @@ class AmountSelectionView: UIView{
          amountSelectionDescription.rightAnchor.constraint(equalTo: amountSelectionView.rightAnchor, constant: -20),
          amountSelectionDescription.bottomAnchor.constraint(equalTo: amountSelectionView.bottomAnchor, constant: -20)].forEach({$0.isActive = true})
     }
+}
+
+
+extension AmountSelectionView: StackDataSource{
+    
+    var state: StateOfView {
+        get {
+            return currentState
+        }
+        set(newValue) {
+            self.currentState = newValue
+        }
+    }
+    
+    func heightOfHeaderView() -> CGFloat {
+        return 96
+    }
+    
 }

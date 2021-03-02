@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Stacks
 
 class EMICell: UICollectionViewCell{
     

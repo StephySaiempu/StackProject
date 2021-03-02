@@ -16,5 +16,8 @@ extension UIColor{
         static let cellOneColor = UIColor(red: 0.27, green: 0.20, blue: 0.24, alpha: 1.00)
         static let cellTwoColor = UIColor(red: 0.49, green: 0.45, blue: 0.56, alpha: 1.00)
         static let cellThreeColor = UIColor(red: 0.35, green: 0.41, blue: 0.55, alpha: 1.00)
+        static let firstViewBackgroundColor = UIColor(red: 0.08, green: 0.10, blue: 0.13, alpha: 1.00)
+        static let secondViewBackgroundColor = UIColor(red: 0.10, green: 0.11, blue: 0.16, alpha: 1.00)
+        static let thirdViewBackgroundColor =  UIColor(red: 0.15, green: 0.16, blue: 0.24, alpha: 1.00)
     }
 }
