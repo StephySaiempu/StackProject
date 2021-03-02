@@ -243,7 +243,7 @@ extension EMISelectionView: StackDataSource{
         }
     }
     func heightOfHeaderView() -> CGFloat {
-        return 96
+        return 140
     }
      
     

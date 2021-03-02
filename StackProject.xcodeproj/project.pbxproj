@@ -33,6 +33,7 @@
 		BF1BD9AE25ED5379009901BB /* StateOfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD9AD25ED5379009901BB /* StateOfView.swift */; };
 		BF1BD9B425ED53E2009901BB /* NavigationProtocolForStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD9B325ED53E2009901BB /* NavigationProtocolForStack.swift */; };
 		BF1BD9C225ED5ECB009901BB /* StackError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD9C125ED5ECB009901BB /* StackError.swift */; };
+		BF503B3B25EE991900B6873E /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF503B3A25EE991900B6873E /* CircularProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		BF1BD9AD25ED5379009901BB /* StateOfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateOfView.swift; sourceTree = "<group>"; };
 		BF1BD9B325ED53E2009901BB /* NavigationProtocolForStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationProtocolForStack.swift; sourceTree = "<group>"; };
 		BF1BD9C125ED5ECB009901BB /* StackError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackError.swift; sourceTree = "<group>"; };
+		BF503B3A25EE991900B6873E /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +289,7 @@
 			children = (
 				BF1BD98325ECF44E009901BB /* BaseView.swift */,
 				BF1BD9A125ED23F9009901BB /* BaseImageView.swift */,
+				BF503B3A25EE991900B6873E /* CircularProgressView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				BF1BD98425ECF44E009901BB /* BaseView.swift in Sources */,
 				BF1BD9A225ED23F9009901BB /* BaseImageView.swift in Sources */,
 				BF1BD8E925ECA5FD009901BB /* AppDelegate.swift in Sources */,
+				BF503B3B25EE991900B6873E /* CircularProgressView.swift in Sources */,
 				BF1BD8EB25ECA5FD009901BB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
